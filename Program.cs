@@ -152,10 +152,13 @@ namespace Project01_Introduction
             string H = Console.ReadLine();
             int h = Convert.ToInt32(H);
 
-            if ( f > g & f > h)
+            if (f == g && g == h)
+                Console.WriteLine("numbers are same");
+
+            else if ( f > g && f > h)
                 Console.WriteLine("f is greatest" +f);
 
-            else if (g > f & g > h)
+            else if (g > f && g > h)
 
                 Console.WriteLine("g is greatest" +g);
 
@@ -253,7 +256,25 @@ namespace Project01_Introduction
             // *****
 
             // Write your code here
+            Console.WriteLine("Exercise 6 : Input a value (n)  and display the following * patter");
+            Console.WriteLine("Please provide your input number");
+            string P = Console.ReadLine();
+            int p = Convert.ToInt32(P);
 
+            for (int i = 1; i <= p; i++)
+            {
+                for (int j = p-1; j >=i; j--)
+
+                {
+                    Console.Write(" ");
+                }
+                for (int z = 1; z<=i; z++)
+
+                {
+                    Console.Write("*");
+                }
+                Console.Write("\n");
+            }
 
 
 
@@ -298,32 +319,90 @@ namespace Project01_Introduction
             // Enter n numbers in an array and print all the even numbers.
 
             // Write your code here
+            Console.WriteLine("Exercise 8 : Enter n numbers in an array and print all the even numbers");
+            Console.WriteLine("Please provide total number (n) in an array ");
+            string M = Console.ReadLine();
+            int m = Convert.ToInt32(M);
+            int[] arr = new int[m];
 
+            Console.WriteLine("Please provide your n input numbers");
 
+            for (int i = 0; i < m; i++)
+            {
+                
+                    arr[i] = Convert.ToInt32(Console.ReadLine());
+               
+            }
+
+            Console.WriteLine("Your array is");
+            foreach (int item in arr)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("Even numbers are");
+            for (int i = 0; i < m; i++)
+            {
+                if (arr[i] % 2 == 0)
+                    Console.WriteLine(arr[i]);
+            }
 
             // Exercise 9
             // Enter n numbers in an array and find the highest and the smallest number.
 
             // Write your code here
+            Console.WriteLine("Exercise 8 : Enter n numbers in an array and find the highest and the smallest number");
+            Console.WriteLine("Please provide total number (n) in an array ");
+            string O = Console.ReadLine();
+            int o = Convert.ToInt32(O);
+            int[] arra = new int[o];
 
-        }
-       /*
-        static decimal ComputeTaxes(decimal income)
-        {
-            decimal taxLiability;
-            decimal taxRate;
+            Console.WriteLine("Please provide your n input numbers");
 
-            if (income < 400000)
-                taxLiability = 0;
-            else
+            for (int i = 0; i < o; i++)
             {
-                taxRate = 0.5M;
-                taxLiability = taxRate * income;
+
+                arra[i] = Convert.ToInt32(Console.ReadLine());
+
             }
 
-            return taxLiability;
+            Console.WriteLine("Your array is");
+            foreach (int item in arra)
+            {
+                Console.WriteLine(item);
+            }
+          
+           
+            int large = arra[0];
+            int small = arra[0];
+            for (int i = 1; i < n; i++)
+            {
+                if (arra[i] > large)
+                    large = arra[i];
+                else if (arra[i] < small)
+                    small = arra[i];
+            }
+            Console.WriteLine("Largest element in the array is "+ large);
+            Console.WriteLine("Smallest element in the array is "+ small);
+
         }
-        */
-        
+        /*
+         static decimal ComputeTaxes(decimal income)
+         {
+             decimal taxLiability;
+             decimal taxRate;
+
+             if (income < 400000)
+                 taxLiability = 0;
+             else
+             {
+                 taxRate = 0.5M;
+                 taxLiability = taxRate * income;
+             }
+
+             return taxLiability;
+         }
+         */
+
     }
 }
